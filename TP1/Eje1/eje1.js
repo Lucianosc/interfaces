@@ -1,21 +1,22 @@
 "use strict";
 
 let matrix = [];
-let width = 5;
-let height = 5;
+let width = 7;
+let height = 6;
 
-for (i = 0; i < height; i++){
+
+for (let i = 0; i < height; i++){
     matrix[i] = [i];
-    for (j = 0; j < width; j++){
-        matrix[i][j] = Math.floor(Math.random()*100);
+    for (let j = 0; j < width; j++){
+        matrix[i][j] = null;
     }
 }
 
 // Escribir una función que retorne el valor máximo de toda la matriz
 function returnMax(){
     let max = 0;
-    for (i = 0; i < height; i++){
-        for (j = 0; j < width; j++){
+    for (let i = 0; i < height; i++){
+        for (let j = 0; j < width; j++){
             if (max < matrix[i][j]){
                 max = matrix[i][j];
             }
@@ -30,12 +31,12 @@ let numMax = returnMax();
 // filas pares y el valor mínimo en las filas impares
 
 function returnMaxParMinImpar(){
-    max = 0;
-    min = 99999;
-    arr = new Array();
+    let max = 0;
+    let min = 99999;
+    let arr = new Array();
 
-    for (i = 0; i < height; i++){
-        for (j = 0; j < width; j++){
+    for (let i = 0; i < height; i++){
+        for (let j = 0; j < width; j++){
             if (max < matrix[i][j] && j % 2 == 0){
                 max = matrix[i][j];
             }
@@ -55,11 +56,11 @@ let maxParMinImpar = returnMaxParMinImpar();
 // Calcular el valor promedio de cada fila y guardarlos en un arreglo
 
 function returnRowAverage(){
-    aux = 0;
-    arr = new Array();
+    let aux = 0;
+    let arr = new Array();
 
-    for (i = 0; i < height; i++){
-        for ( j = 0; j < width; j++){
+    for (let i = 0; i < height; i++){
+        for (let j = 0; j < width; j++){
             aux += matrix[i][j];
         }
         arr.push(aux/width);
